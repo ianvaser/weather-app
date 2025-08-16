@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+    <link rel="stylesheet" href="./Styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Weather App</h1>
+        <div class="card">
+            <div class="card-header">
+                <form id="weather-form">
+                    <input type="text" id="city-input" placeholder="Enter city name" required>
+                    <button class="search-button" type="submit" onclick=getWeather(cityInput.value)>
+                        <img src="./images/search.png" alt="Search Icon" class="search-icon"></button>
+                </form>
+            </div>
+            <div id="weather-result">
+                <div class="weather-info">
+                    <h2 id="city-name">City Name</h2>
+                    <img id="weather-icon" src="./images/clear.png" alt="Weather Icon" >
+                    <p id="temperature">Temperature: 0°C</p>
+                    <div id="weather-description">
+                        <div class="humidity">
+                            <img src="./images/humidity.png" alt="Humidity Icon" class="weather-icon">
+                            <p id="humidity">Humidity: 0%</p>
+                        </div>
+                        <div class="wind-speed">
+                            <img src="./images/wind.png" alt="Wind Speed Icon" class="weather-icon">
+                            <p id="wind-speed">Wind : 0 m/s</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./Logic/logic.js"></script>
+</html>
