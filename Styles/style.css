@@ -16,7 +16,6 @@ body{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
     min-width: 60vw;
-    min-height: 50vh;
     margin: 10px;
 }
 
@@ -69,7 +68,7 @@ body{
     margin-top: 20px;
     padding: 0px 10px;
     border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.1);
+   
 }
 
 .weather-info{
@@ -79,9 +78,12 @@ body{
 }
 
 #wind-speed {
-    margin-left: 15vw;
+    margin-left: 1vw;
 }
 
+#humidity{
+    margin-left: 1vw;
+}
 #temperature {
     font-size: 2em;
     font-weight: bold;
@@ -90,8 +92,21 @@ body{
 
 .humidity {
     display: flex;
+    align-items: center;
 }
 
 .wind-speed {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10vw;
+}
+
+.weather-icon {
+    width: 40px;
+    height: 40px;
+}
+
+#weather-result{
+    display: none;
 }
