@@ -110,3 +110,9 @@ body{
 #weather-result{
     display: none;
 }
+
+#wind-direction {
+    font-size: 1em;
+    color: #fff;
+    margin-left: 5px;
+}

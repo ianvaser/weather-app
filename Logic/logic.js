@@ -18,11 +18,12 @@ async function getWeather(city){
             description: data.weather[0].description,
             icon: data.weather[0].icon,
             wind: data.wind.speed,
+            windDirection: data.wind.deg,
             humidity: data.main.humidity,
         };
         
         document.getElementById("city-name").innerText = weather.city;
-        document.getElementById("temperature").innerText = weather.temperature + "°C";
+        document.getElementById("temperature").innerText = Math.round(weather.temperature) + "°C";
         document.getElementById("wind-speed").innerText = weather.wind + " km/h";
         document.getElementById("humidity").innerText = weather.humidity + "%";
         
@@ -41,10 +42,22 @@ async function getWeather(city){
         else if(data.weather[0].main === "Drizzle") {
             document.getElementById("weather-icon").src = "./images/drizzle.png";
         }
-        else if(data.weather[0].main === "Thunderstorm") {
-            document.getElementById("weather-icon").src = "./images/thunderstorm.png";
+        if(data.weather[0].main === "Mist") {
+            document.getElementById("weather-icon").src = "./images/mist.png";
         }
 
+        if(weather.windDirection >= 0 && weather.windDirection < 45) {
+            document.getElementById("wind-direction").innerText = "Dir: N";
+        }
+        if(weather.windDirection >= 45 && weather.windDirection < 135) {
+            document.getElementById("wind-direction").innerText = "Dir: E";
+        }
+        if(weather.windDirection >= 135 && weather.windDirection < 225) {
+            document.getElementById("wind-direction").innerText = "Dir: S";
+        }
+        if(weather.windDirection >= 225 && weather.windDirection < 315) {
+            document.getElementById("wind-direction").innerText = "Dir: W";
+        }
         document.getElementById("weather-result").style.display = "block";
     }   
     else {
