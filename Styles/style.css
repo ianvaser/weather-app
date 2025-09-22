@@ -22,15 +22,15 @@ body{
 .search-icon{
     width: 20px;
     height: 20px;
-    fill: #fff;
+    fill: #ffffff;
 }
 
 .search-button{
     position: relative;
     
-    background-color: #f9f9f979;
-    color: #fff;
+    background-color: #f6f4f47c;
     border: none;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
     border-radius: 100%;
     padding: 8px 12px;
     cursor: pointer;
@@ -105,6 +105,7 @@ body{
 .weather-icon {
     width: 40px;
     height: 40px;
+    transition: transform 0.3s ease-out;
 }
 
 #weather-result{
@@ -115,4 +116,9 @@ body{
     font-size: 1em;
     color: #fff;
     margin-left: 5px;
+    
+}
+
+.weather-icon:hover {
+  transform: perspective(1000px) rotateX(20deg); /* Añade un efecto 3D */
 }

@@ -23,7 +23,13 @@ async function getWeather(city){
         };
         
         document.getElementById("city-name").innerText = weather.city;
+        if (weather.temperature > 30) {
+            alert("It's quite hot in " + weather.city + "! Stay hydrated.");
+        } else if (weather.temperature < 10) {
+        alert("It's quite cold in " + weather.city + "! Dress warmly.");
+        } 
         document.getElementById("temperature").innerText = Math.round(weather.temperature) + "°C";
+        
         document.getElementById("wind-speed").innerText = weather.wind + " km/h";
         document.getElementById("humidity").innerText = weather.humidity + "%";
         
